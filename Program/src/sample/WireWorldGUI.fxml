@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="623.0" style="-fx-background-color: #1D2026;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MainController">
+   <children>
+      <AnchorPane fx:id="mainAnchorPane" prefHeight="416.0" prefWidth="223.0" style="-fx-background-color: #1D20a0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.8421709430404007E-14" AnchorPane.rightAnchor="399.66666666666663" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane layoutX="-6.0" prefHeight="69.0" prefWidth="223.0">
+               <children>
+                  <Text fill="WHITE" layoutX="28.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wire World">
+                     <font>
+                        <Font name="Modern No. 20" size="30.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Button fx:id="loadFileButton" layoutX="9.0" layoutY="108.0" mnemonicParsing="false" onAction="#loadFile" prefHeight="27.0" prefWidth="200.0" style="-fx-background-color: #F8CC81 #F8CC81;" text="Load File">
+               <font>
+                  <Font name="Modern No. 20" size="18.0" />
+               </font>
+            </Button>
+            <Text fill="WHITE" layoutX="12.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="number of generations:" wrappingWidth="183.1367320363388" />
+            <Button fx:id="SaveFileButton" layoutX="9.0" layoutY="148.0" mnemonicParsing="false" onAction="#saveFile" prefHeight="34.0" prefWidth="199.0" style="-fx-background-color: #F8CC81 #F8CC81;" text="Save File" textFill="#0f0f0f">
+               <font>
+                  <Font name="Modern No. 20" size="18.0" />
+               </font>
+            </Button>
+            <Text fill="#fffefe" layoutX="19.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Speed" wrappingWidth="58.271488189697266">
+               <font>
+                  <Font name="Modern No. 20" size="15.0" />
+               </font>
+            </Text>
+            <Slider fx:id="speedSlider" layoutX="105.0" layoutY="204.0" prefHeight="16.0" prefWidth="98.0" />
+            <Button fx:id="runButton" layoutX="8.0" layoutY="327.0" mnemonicParsing="false" onAction="#runWireWorld" prefHeight="27.0" prefWidth="205.0" style="-fx-background-color: #F8CC81 #F8CC81;" text="Run">
+               <font>
+                  <Font name="Modern No. 20" size="18.0" />
+               </font>
+            </Button>
+            <TextField fx:id="heightTextArea" layoutX="9.0" layoutY="381.0" prefHeight="26.0" prefWidth="58.0" promptText="height" text="40" />
+            <TextField fx:id="widthTextArea" layoutX="76.0" layoutY="381.0" prefHeight="26.0" prefWidth="58.0" promptText="width" text="40" />
+            <Button fx:id="createSimulationFieldButton" layoutX="146.0" layoutY="382.0" mnemonicParsing="false" onAction="#setSize" prefHeight="23.0" prefWidth="66.0" style="-fx-background-color: #F8CC81 #F8CC81;" text="Set size">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="pauseButton" layoutX="146.0" layoutY="232.0" mnemonicParsing="false" onAction="#pauseSimulation" prefHeight="23.0" prefWidth="66.0" style="-fx-background-color: #F8CC81 #F8CC81;" text="Pause">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Button>
+            <TextField fx:id="numberOfGenerationsTextField" alignment="CENTER_RIGHT" layoutX="9.0" layoutY="284.0" onAction="#runWireWorld" prefHeight="34.0" prefWidth="205.0" promptText="number of generations" text="1" />
+            <Text fill="WHITE" layoutX="9.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="height:" wrappingWidth="58.00000537145388" />
+            <Text fill="WHITE" layoutX="76.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="width:" wrappingWidth="58.00000537145388" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="223.0" prefHeight="105.0" prefWidth="400.0" style="-fx-background-color: #1D20a0; -fx-border-color: #1D20a0;" AnchorPane.bottomAnchor="310.6666666666667" AnchorPane.leftAnchor="223.00000000000006" AnchorPane.rightAnchor="-0.6666666666666856" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button layoutX="1.0" layoutY="12.0" mnemonicParsing="false" onAction="#addOrGate" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #F8CC81 #F8CC81;" text="Or Gate">
+               <font>
+                  <Font name="Modern No. 20" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="1.0" layoutY="56.0" mnemonicParsing="false" onAction="#addAndGate" prefHeight="27.0" prefWidth="109.0" style="-fx-background-color: #F8CC81 #F8CC81;" text="And Gate">
+               <font>
+                  <Font name="Modern No. 20" size="14.0" />
+               </font>
+            </Button>
+            <HBox layoutX="134.0" layoutY="51.0" prefHeight="39.0" prefWidth="98.0">
+               <children>
+                  <Button fx:id="conductorButton" mnemonicParsing="false" onAction="#setConductor" onMouseEntered="#buttonMouseEntered" onMouseExited="#buttonMouseExited" onMousePressed="#buttonMousePressed" onMouseReleased="#buttonMouseReleased" style="-fx-background-color: #FFFF00;">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="electronHeadButton" mnemonicParsing="false" onAction="#setElectronHead" onMouseEntered="#buttonMouseEntered" onMouseExited="#buttonMouseExited" onMousePressed="#buttonMousePressed" onMouseReleased="#buttonMouseReleased" prefHeight="23.0" prefWidth="10.0" style="-fx-background-color: #0000FF;">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="electronTailButton" mnemonicParsing="false" onAction="#setElectronTail" onMouseEntered="#buttonMouseEntered" onMouseExited="#buttonMouseExited" onMousePressed="#buttonMousePressed" onMouseReleased="#buttonMouseReleased" style="-fx-background-color: #FF0000;">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="emptyButton" mnemonicParsing="false" onAction="#setEmpty" onMouseEntered="#buttonMouseEntered" onMouseExited="#buttonMouseExited" onMousePressed="#buttonMousePressed" onMouseReleased="#buttonMouseReleased" style="-fx-background-color: #000000;" />
+               </children>
+            </HBox>
+            <Text fill="#fffefe" layoutX="121.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Types of Cell" wrappingWidth="132.13673782348633">
+               <font>
+                  <Font name="Modern No. 20" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="#fffefe" layoutX="268.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current cell" wrappingWidth="132.13673782348633">
+               <font>
+                  <Font name="Modern No. 20" size="20.0" />
+               </font>
+            </Text>
+            <Circle fx:id="currentCellCircle" fill="#fcff3d" layoutX="322.0" layoutY="60.0" radius="20.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-fill: #ffff00;" />
+         </children></AnchorPane>
+      <BorderPane fx:id="simulationPane" layoutX="223.0" layoutY="104.0" prefHeight="314.0" prefWidth="401.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="223.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="104.0" />
+   </children>
+</AnchorPane>
